@@ -1,7 +1,6 @@
-package rezkyaulia.com.football_kotlin_dicoding.network.schema
+package rezkyaulia.com.football_kotlin_dicoding.network.common.schema
 
 import com.google.gson.annotations.SerializedName
-import rezkyaulia.com.football_kotlin_dicoding.network.schema.Player
 
 data class PlayerResponse(
     @SerializedName(value="player", alternate= arrayOf("players"))

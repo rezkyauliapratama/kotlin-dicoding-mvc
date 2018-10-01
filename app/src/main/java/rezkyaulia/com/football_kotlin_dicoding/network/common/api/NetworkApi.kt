@@ -1,11 +1,11 @@
-package rezkyaulia.com.football_kotlin_dicoding.network
+package rezkyaulia.com.football_kotlin_dicoding.network.common.api
 
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
-import rezkyaulia.com.football_kotlin_dicoding.network.schema.EventResponse
-import rezkyaulia.com.football_kotlin_dicoding.network.schema.PlayerResponse
-import rezkyaulia.com.football_kotlin_dicoding.network.schema.TeamResponse
+import rezkyaulia.com.football_kotlin_dicoding.network.common.schema.EventResponse
+import rezkyaulia.com.football_kotlin_dicoding.network.common.schema.PlayerResponse
+import rezkyaulia.com.football_kotlin_dicoding.network.common.schema.TeamResponse
 
 /**
  * Created by Rezky Aulia Pratama on 11/9/18.
