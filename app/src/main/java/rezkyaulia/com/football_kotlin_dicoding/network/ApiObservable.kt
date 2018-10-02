@@ -1,4 +1,4 @@
-package rezkyaulia.com.football_kotlin_dicoding.network.common
+package rezkyaulia.com.football_kotlin_dicoding.network
 
 import java.util.*
 import java.util.concurrent.ConcurrentHashMap

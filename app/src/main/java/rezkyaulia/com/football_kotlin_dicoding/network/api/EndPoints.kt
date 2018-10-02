@@ -1,4 +1,4 @@
-package rezkyaulia.com.football_kotlin_dicoding.network.common.api
+package rezkyaulia.com.football_kotlin_dicoding.network.api
 
 import rezkyaulia.com.football_kotlin_dicoding.BuildConfig
 

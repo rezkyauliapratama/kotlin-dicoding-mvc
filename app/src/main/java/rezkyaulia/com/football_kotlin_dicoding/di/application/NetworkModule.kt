@@ -10,7 +10,8 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import rezkyaulia.com.football_kotlin_dicoding.BuildConfig
-import rezkyaulia.com.football_kotlin_dicoding.network.common.api.NetworkApi
+import rezkyaulia.com.football_kotlin_dicoding.network.api.NetworkApi
+import rezkyaulia.com.football_kotlin_dicoding.repository.api.FetchEventUseCase
 
 
 /**
@@ -50,4 +51,10 @@ class NetworkModule{
     fun provideNetworkApi(retrofit: Retrofit): NetworkApi {
         return retrofit.create(NetworkApi::class.java)
     }
+
+  /*  @Provides
+    fun provideFetchEventUseCase(networkApi: NetworkApi) : FetchEventUseCase{
+        return FetchEventUseCase(networkApi)
+    }
+*/
 }

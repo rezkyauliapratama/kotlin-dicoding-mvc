@@ -1,4 +1,4 @@
-package rezkyaulia.com.football_kotlin_dicoding.network.common.schema
+package rezkyaulia.com.football_kotlin_dicoding.network.schema.event
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
