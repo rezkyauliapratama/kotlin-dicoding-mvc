@@ -2,7 +2,7 @@ package rezkyaulia.com.football_kotlin_dicoding.di.controller
 
 import dagger.Component
 import rezkyaulia.com.football_kotlin_dicoding.di.application.ApplicationComponent
-import rezkyaulia.com.football_kotlin_dicoding.screens.LastEventFragment
+import rezkyaulia.com.football_kotlin_dicoding.screens.main.LastEventFragment
 
 /**
  * Created by Rezky Aulia Pratama on 15/8/18.

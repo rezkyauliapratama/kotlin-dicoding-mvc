@@ -1,9 +1,7 @@
-package rezkyaulia.com.football_kotlin_dicoding.screens
+package rezkyaulia.com.football_kotlin_dicoding.screens.main
 
 import android.app.Activity
-import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
-import android.databinding.DataBindingUtil
 import android.databinding.DataBindingUtil.*
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -12,7 +10,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.fragment_prev_event.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.error
 import rezkyaulia.com.football_kotlin_dicoding.BaseApplication

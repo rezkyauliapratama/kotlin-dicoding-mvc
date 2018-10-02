@@ -1,4 +1,4 @@
-package rezkyaulia.com.football_kotlin_dicoding.screens
+package rezkyaulia.com.football_kotlin_dicoding.screens.main
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater

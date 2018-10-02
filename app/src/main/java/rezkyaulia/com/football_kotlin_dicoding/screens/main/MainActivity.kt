@@ -1,4 +1,4 @@
-package rezkyaulia.com.football_kotlin_dicoding.screens
+package rezkyaulia.com.football_kotlin_dicoding.screens.main
 
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import com.google.gson.Gson
 import org.jetbrains.anko.ctx
 import rezkyaulia.com.football_kotlin_dicoding.R
 import rezkyaulia.com.football_kotlin_dicoding.R.array.league
