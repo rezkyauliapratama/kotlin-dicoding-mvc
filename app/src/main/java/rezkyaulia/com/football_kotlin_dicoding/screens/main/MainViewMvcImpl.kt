@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.FrameLayout
-import org.jetbrains.anko.ctx
 import org.jetbrains.anko.error
 import rezkyaulia.com.football_kotlin_dicoding.R
 import rezkyaulia.com.football_kotlin_dicoding.databinding.ActivityMainBinding

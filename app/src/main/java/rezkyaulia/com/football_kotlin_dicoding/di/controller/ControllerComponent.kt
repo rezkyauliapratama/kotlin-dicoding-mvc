@@ -9,7 +9,7 @@ import rezkyaulia.com.football_kotlin_dicoding.screens.main.MainActivity
  * Created by Rezky Aulia Pratama on 15/8/18.
  */
 @PerController
-@Component(dependencies = [ApplicationComponent::class], modules = [ActivityModule::class,ControllerModule::class])
+@Component(dependencies = [ApplicationComponent::class], modules = [ActivityModule::class,MvcWrapperModule::class,ControllerModule::class])
 interface ControllerComponent{
     fun inject(lastEventFragment: LastEventFragment)
     fun inject(lastEventFragment: MainActivity)
