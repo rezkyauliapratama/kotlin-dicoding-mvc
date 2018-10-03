@@ -26,7 +26,7 @@ class MainActivity : BaseActivity<MainController,MainViewMvc, ActivityMainBindin
         mController.screensNavigator.toLastEvent()
     }
     override fun inject() {
-        activityComponent.inject(this)
+        controllerComponent.inject(this)
     }
 
     override fun onStart() {

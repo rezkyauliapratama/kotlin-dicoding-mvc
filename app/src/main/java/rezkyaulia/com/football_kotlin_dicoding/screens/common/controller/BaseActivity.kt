@@ -30,8 +30,8 @@ abstract class BaseActivity<T : BaseController, U : ViewMvc, V : ViewDataBinding
     abstract fun initView()
     abstract fun initDataBinding()
 
-    val activityComponent: ControllerComponent by lazy {
-         DaggerControllerComponent.builder()
+    val controllerComponent: ControllerComponent by lazy {
+        DaggerControllerComponent.builder()
                 .applicationComponent(BaseApplication.component)
                 .activityModule(ActivityModule(this))
                 .build()
