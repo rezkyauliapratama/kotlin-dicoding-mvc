@@ -5,8 +5,11 @@ import rezkyaulia.com.football_kotlin_dicoding.screens.main.lastevent.LastEventF
 
 class ScreensNavigator(private val mFragmentFrameHelper: FragmentFrameHelper) {
 
-
-    fun toQuestionsList() {
+    fun toLastEvent() {
         mFragmentFrameHelper.replaceFragmentAndClearBackstack(LastEventFragment.newInstance())
+    }
+
+    fun fetchDataIntoLastEvent(s : String){
+        (mFragmentFrameHelper.getFragment() as LastEventFragment).setData(s)
     }
 }

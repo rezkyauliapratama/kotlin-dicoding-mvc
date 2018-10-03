@@ -16,7 +16,7 @@ import rezkyaulia.com.football_kotlin_dicoding.screens.main.MainController
 class ControllerModule {
 
     @Provides
-    fun getMainController(@ActivityContext context: Context) : MainController{
-        return MainController(context)
+    fun getMainController(screensNavigator: ScreensNavigator) : MainController{
+        return MainController(screensNavigator)
     }
 }

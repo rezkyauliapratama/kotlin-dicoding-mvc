@@ -1,5 +1,6 @@
 package rezkyaulia.com.football_kotlin_dicoding.screens.common.controller
 
+import android.databinding.ViewDataBinding
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
@@ -13,7 +14,7 @@ import rezkyaulia.com.football_kotlin_dicoding.screens.common.views.ViewMvc
 import javax.inject.Inject
 
 
-abstract class BaseActivity<T : BaseController, U : ViewMvc>  : AppCompatActivity(), AnkoLogger{
+abstract class BaseActivity<T : BaseController, U : ViewMvc, V : ViewDataBinding>  : AppCompatActivity(), AnkoLogger{
 
     @Inject
     lateinit var viewMvcFactory: ViewMvcFactory
@@ -23,8 +24,11 @@ abstract class BaseActivity<T : BaseController, U : ViewMvc>  : AppCompatActivit
 
     lateinit var mViewMvc: U
 
+    lateinit var mDataBinding: V
+
     abstract fun inject()
     abstract fun initView()
+    abstract fun initDataBinding()
 
     val activityComponent: ControllerComponent by lazy {
          DaggerControllerComponent.builder()
@@ -35,9 +39,12 @@ abstract class BaseActivity<T : BaseController, U : ViewMvc>  : AppCompatActivit
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         inject()
         initView()
+        initDataBinding()
+
+        super.onCreate(savedInstanceState)
+
         setContentView(mViewMvc.dataBinding?.root)
     }
 

@@ -54,7 +54,7 @@ class LastEventFragment : Fragment(), AnkoLogger , FetchEventUseCase.Listener{
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+            error { "oncraete" }
 
         adapter = EventRvAdapter(eventList) { event: Event -> eventClicked(event) }
     }

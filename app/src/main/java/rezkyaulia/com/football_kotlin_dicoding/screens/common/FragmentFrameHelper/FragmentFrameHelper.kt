@@ -21,6 +21,9 @@ class FragmentFrameHelper(private val mActivity: Activity, private val mFragment
         replaceFragment(newFragment, false, false)
     }
 
+    fun getFragment() : Fragment{
+        return currentFragment
+    }
     fun replaceFragmentAndClearBackstack(newFragment: Fragment) {
         replaceFragment(newFragment, false, true)
     }
@@ -99,5 +102,7 @@ class FragmentFrameHelper(private val mActivity: Activity, private val mFragment
         // not sure it is needed; will keep it as a reminder to myself if there will be problems
         // mFragmentManager.executePendingTransactions();
     }
+
+
 
 }
