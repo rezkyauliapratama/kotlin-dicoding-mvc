@@ -1,4 +1,4 @@
-package rezkyaulia.com.football_kotlin_dicoding.screens.common.base.views
+package rezkyaulia.com.football_kotlin_dicoding.screens.common.views
 
 interface ObservableViewMvc<ListenerType> : ViewMvc {
 

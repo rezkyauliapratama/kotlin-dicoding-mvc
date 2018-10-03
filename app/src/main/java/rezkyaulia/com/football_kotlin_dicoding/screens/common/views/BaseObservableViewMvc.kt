@@ -1,8 +1,9 @@
-package rezkyaulia.com.football_kotlin_dicoding.screens.common.base.views
+package rezkyaulia.com.football_kotlin_dicoding.screens.common.views
 
+import org.jetbrains.anko.AnkoLogger
 import java.util.*
 
-abstract class BaseObservableViewMvc<ListenerType> : BaseViewMvc(), ObservableViewMvc<ListenerType> {
+abstract class BaseObservableViewMvc<ListenerType> : BaseViewMvc(), ObservableViewMvc<ListenerType>, AnkoLogger {
 
     private val mListeners = HashSet<ListenerType>()
 

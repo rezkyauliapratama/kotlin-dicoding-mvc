@@ -1,48 +1,53 @@
 package rezkyaulia.com.football_kotlin_dicoding.screens.main
 
 import android.databinding.DataBindingUtil
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import org.jetbrains.anko.ctx
+import android.view.LayoutInflater
+import org.jetbrains.anko.error
 import rezkyaulia.com.football_kotlin_dicoding.R
-import rezkyaulia.com.football_kotlin_dicoding.R.array.league
-import rezkyaulia.com.football_kotlin_dicoding.R.array.league_id
-import rezkyaulia.com.football_kotlin_dicoding.databinding.ActivityMainBinding
+import rezkyaulia.com.football_kotlin_dicoding.screens.common.ViewMvcFactory
+import rezkyaulia.com.football_kotlin_dicoding.screens.common.controller.BaseActivity
+import rezkyaulia.com.football_kotlin_dicoding.screens.main.lastevent.LastEventFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity(), MainViewMvc.Listener{
+
+    override fun onSpinnerLeagueClicked(s: String) {
+        val fragment = supportFragmentManager.findFragmentByTag("lastevent")
+        (fragment as LastEventFragment).setData(s)
+    }
+
+    override fun inject() {
+        activityComponent.inject(this)
+    }
+
+    private lateinit var mViewMvc: MainViewMvc
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        error { "oncreate" }
+        val viewMvcFactory = ViewMvcFactory(LayoutInflater.from(this))
+        mViewMvc = viewMvcFactory.getMainViewMvc(null)
 
-        //init view from res
-        val binding : ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-
-        val spinnerItems = resources.getStringArray(league)
-        val arrLeagueId = resources.getStringArray(league_id)
-        val spinnerAdapter = ArrayAdapter(ctx, R.layout.support_simple_spinner_dropdown_item, spinnerItems)
-        binding.spinner.adapter = spinnerAdapter
-
+        setContentView(mViewMvc.dataBinding?.root)
         supportFragmentManager
                 .beginTransaction()
                 .add(R.id.container, LastEventFragment.newInstance(), "lastevent")
                 .commit()
 
-        binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                val fragment = supportFragmentManager.findFragmentByTag("lastevent")
-                (fragment as LastEventFragment).setData(arrLeagueId[position])
-            }
 
-            override fun onNothingSelected(parent: AdapterView<*>) {
+    }
 
-            }
-        }
+    override fun onStart() {
+        super.onStart()
+        error { "onstart" }
+        mViewMvc.registerListener(this)
+    }
 
+    override fun onStop() {
+        super.onStop()
+        error { "onstop" }
+
+        mViewMvc.unregisterListener(this)
 
     }
 }

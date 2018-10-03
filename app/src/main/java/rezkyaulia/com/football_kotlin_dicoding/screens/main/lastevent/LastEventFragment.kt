@@ -1,4 +1,4 @@
-package rezkyaulia.com.football_kotlin_dicoding.screens.main
+package rezkyaulia.com.football_kotlin_dicoding.screens.main.lastevent
 
 import android.app.Activity
 import android.content.Context

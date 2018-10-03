@@ -1,4 +1,4 @@
-package rezkyaulia.com.football_kotlin_dicoding.screens.common.base
+package rezkyaulia.com.football_kotlin_dicoding.screens.common.controller
 
 import android.support.v7.app.AppCompatActivity
 import org.jetbrains.anko.AnkoLogger
