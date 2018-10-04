@@ -17,21 +17,21 @@ import rezkyaulia.com.football_kotlin_dicoding.screens.common.ViewMvcFactory
 import rezkyaulia.com.football_kotlin_dicoding.screens.common.views.ViewMvc
 import javax.inject.Inject
 
-abstract class BaseFragment<T : BaseController, U : ViewMvc, V : ViewDataBinding>  : Fragment(), AnkoLogger{
+abstract class BaseFragment<CONTROLLER : BaseController, VIEW_MVC : ViewMvc, DATA_BINDING : ViewDataBinding>  : Fragment(), AnkoLogger{
 
 
     @Inject
     lateinit var viewMvcFactory: ViewMvcFactory
 
     @Inject
-    lateinit var mController: T
+    lateinit var mController: CONTROLLER
 
-    lateinit var mViewMvc: U
+    lateinit var mViewMvc: VIEW_MVC
 
-    lateinit var mDataBinding: V
+    lateinit var mDataBinding: DATA_BINDING
 
     abstract fun inject()
-    abstract fun initView()
+    abstract fun initView(container: ViewGroup?)
     abstract fun initDataBinding()
 
     val controllerComponent: ControllerComponent by lazy {
@@ -51,7 +51,7 @@ abstract class BaseFragment<T : BaseController, U : ViewMvc, V : ViewDataBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        initView()
+        initView(container)
         initDataBinding()
         return mViewMvc.dataBinding?.root
     }

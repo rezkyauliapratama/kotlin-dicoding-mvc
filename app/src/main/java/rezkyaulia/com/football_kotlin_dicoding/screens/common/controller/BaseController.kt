@@ -1,3 +1,5 @@
 package rezkyaulia.com.football_kotlin_dicoding.screens.common.controller
 
-abstract class BaseController
+import org.jetbrains.anko.AnkoLogger
+
+abstract class BaseController : AnkoLogger

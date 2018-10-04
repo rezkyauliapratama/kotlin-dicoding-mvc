@@ -39,17 +39,4 @@ class MainActivity : BaseActivity<MainController,MainViewMvc, ActivityMainBindin
         mController.onStop()
     }
 
-
-
-/*
-
-        setContentView(mViewMvc.dataBinding?.root)
-        supportFragmentManager
-                .beginTransaction()
-                .add(R.id.container, LastEventFragment.newInstance(), "lastevent")
-                .commit()
-*/
-
-
-//    }
 }
