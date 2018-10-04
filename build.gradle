@@ -44,7 +44,8 @@ ext {
     //Test dependencies
     junitVersion = '4.12'
     espressoVersion = '3.0.2'
-    mockitoVersion = '2.7.1'
+    mockitoVersion = '2.21.0'
+    mockitoInlineVersion = '2.19.0'
 }
 
 
