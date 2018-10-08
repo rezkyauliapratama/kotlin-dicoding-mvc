@@ -12,7 +12,18 @@ import rezkyaulia.com.football_kotlin_dicoding.network.schema.event.Event
 /**
  * Created by Rezky Aulia Pratama on 20/8/18.
  */
-class EventRvAdapter(private val listItem: List<Event>, private val clickListener : (Event) -> Unit) : RecyclerView.Adapter<EventRvAdapter.ViewHolder>() {
+class EventRvAdapter(private val clickListener : (Event) -> Unit) : RecyclerView.Adapter<EventRvAdapter.ViewHolder>() {
+
+    val listItem : MutableList<Event> = mutableListOf()
+
+    fun bindEvents(events: List<Event>){
+        listItem.clear()
+
+        if (!events.isEmpty())
+            listItem.addAll(events)
+
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_item_event, parent, false);

@@ -13,7 +13,7 @@ import rezkyaulia.com.football_kotlin_dicoding.R.array.league
 import rezkyaulia.com.football_kotlin_dicoding.R.array.league_id
 import rezkyaulia.com.football_kotlin_dicoding.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class  MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -36,8 +36,6 @@ class LastEventFragment : Fragment(), AnkoLogger , FetchEventUseCase.Listener{
     }
 
     private lateinit var adapter: EventRvAdapter
-    val eventList : MutableList<Event> = mutableListOf()
-    var leagueId : String = ""
 
     lateinit var controllerComponent: ControllerComponent
 
@@ -59,7 +57,7 @@ class LastEventFragment : Fragment(), AnkoLogger , FetchEventUseCase.Listener{
         super.onCreate(savedInstanceState)
 
 
-        adapter = EventRvAdapter(eventList) { event: Event -> eventClicked(event) }
+        adapter = EventRvAdapter { event: Event -> eventClicked(event) }
     }
 
     private fun eventClicked(event: Event) {
@@ -99,16 +97,14 @@ class LastEventFragment : Fragment(), AnkoLogger , FetchEventUseCase.Listener{
 
     override fun onEventFetchSuccess(events: List<Event>) {
         error { "eventFetchSuccess : ${Gson().toJson(events)}" }
-        eventList.clear()
-        eventList.addAll(events)
-        adapter.notifyDataSetChanged()
+        adapter.bindEvents(events)
     }
 
     override fun onEventFetchFailure() {
         error { "oneventFetchFailure" }
     }
 
-    public fun setData(s: String){
+    fun setData(s: String){
         fetchEventUseCase.fetchLastEventAndNotify(s)
     }
 
